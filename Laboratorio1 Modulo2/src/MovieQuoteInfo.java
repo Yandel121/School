@@ -1,7 +1,5 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class MovieQuoteInfo{
-    public static void main (String[] args) {
+    public static void main(String[]args) {
         /*1. Write, compile, and test a class that uses four println() statements to display, in
         order, your favorite movie quote, the movie it comes from, the character who said it,
         and the year of the movie. Save the class as MovieQuoteInfo.java.*/
