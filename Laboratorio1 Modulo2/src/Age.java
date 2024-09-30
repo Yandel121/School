@@ -11,7 +11,7 @@ public class Age {
         String PROMPT2 ="Introduzca el año de nacimiento";
 
         Scanner sc = new Scanner(System.in);
-        Sys
+
 
 
 
