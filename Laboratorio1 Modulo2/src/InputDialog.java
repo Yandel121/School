@@ -6,6 +6,8 @@ public class InputDialog {
         String result;
         result= JOptionPane.showInputDialog(null,"What is your name?");
         JOptionPane.showMessageDialog(null,"Hello,"+result);
+        JOptionPane.showMessageDialog(null,"Thank you for your answers");
+
 
 
     }
