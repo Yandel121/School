@@ -1,9 +1,12 @@
 public class MovieQuoteInfo{
     public static void main(String[]args) {
-        /*1. Write, compile, and test a class that uses four println() statements to display, in
-        order, your favorite movie quote, the movie it comes from, the character who said it,
-        and the year of the movie. Save the class as MovieQuoteInfo.java.*/
+        // File: MovieQuoteInfo
+        // Author: Yandel Colón
+        // Date: 2024-09-30
+        // Class: COMP 2120 Programming Logic
+        // Description: A program that outputs a quote alongside, where and who it comes from and the year it was said.
 
+        //Process//
         System.out.println("“Now I am become death, destroyer of worlds!”");
         //Este comando muestra una frase citada de una pelicula//
 

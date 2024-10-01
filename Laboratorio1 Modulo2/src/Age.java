@@ -2,9 +2,11 @@ import java.util.Scanner;
 
 public class Age {
     public static void main(String[] args) {
-        /*4. Write, compile, and test a class to represent the logic of a program that
-                allows the user to enter values for the current year and the user’s birth year. The
-        program outputs the age of the user this year. Save the class as Age.java.*/
+        // File: Age
+        // Author: Yandel Colón
+        // Date: 2024-09-30
+        // Class: COMP 2120 Programming Logic
+        // Description: A program that demonstrates the age of a user via interactivity.
 
         //Declaration//
         String PROMPT = "Introduce el año actual";
