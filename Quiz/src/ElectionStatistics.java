@@ -3,9 +3,11 @@ import java.util.Scanner;
 public class ElectionStatistics {
     public static void main(String[] args) {
 
-        /*Write a program that accepts the names of three political parties and the number of votes each
-received in the last mayoral election. Display the percentage of the vote each party received.
-Save the program as ElectionStatistics.java*/
+        // File: ElectionStatistics
+        // Author: Yandel Colón
+        // Date: 2024-10-07
+        // Class: COMP 2120 Programming Logic
+        // Description: A program that calculates the percentage of votes between 3 political parties.
 
         //Declaration//
         String PROMPT1=( "Introduzca la cantidad de votos del partido rojo:" ) ;
