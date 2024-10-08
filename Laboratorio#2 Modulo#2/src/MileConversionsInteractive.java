@@ -2,7 +2,11 @@ import java.util.Scanner;
 
 public class MileConversionsInteractive {
     public static void main(String[] args) {
-
+        // File: MileConversionsInteractive
+        // Author: Yandel Colón
+        // Date: 2024-10-07
+        // Class: COMP 2120 Programming Logic
+        // Description: A program that converts miles into feet,inches and yards.
         //Declaration//
         String PROMPT= ("Introduzca la cantidad de millas deseada");
         double INCHES=63360;
@@ -16,8 +20,8 @@ public class MileConversionsInteractive {
         double answerInches= INCHES*answerMiles;
         double answerYards= YARD*answerMiles;
 
-        System.out.println(answerFeet);
-        System.out.println(answerInches);
-        System.out.println(answerYards);
+        System.out.println("Feet:\t"+answerFeet);
+        System.out.println("Inches:\t"+answerInches);
+        System.out.println("Yards:\t"+answerYards);
     }
 }

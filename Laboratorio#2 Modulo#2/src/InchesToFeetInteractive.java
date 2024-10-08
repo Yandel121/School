@@ -1,8 +1,7 @@
 import java.util.Scanner;
-
 public class InchesToFeetInteractive {
     public static void main(String[] args) {
-        // File: InchesToFeet
+        // File: InchesToFeetInteractive
         // Author: Yandel Colón
         // Date: 2024-10-05
         // Class: COMP 2120 Programming Logic
@@ -10,7 +9,6 @@ public class InchesToFeetInteractive {
 
         //Declaration//
         String PROMPT = ("Write how many inches to convert into feet");
-
         //Process//
         Scanner sc = new Scanner(System.in);
         System.out.println(PROMPT);

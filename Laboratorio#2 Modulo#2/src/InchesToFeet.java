@@ -13,8 +13,5 @@ public class InchesToFeet {
         int result1= FEET*INCHES/12;
         int result2=INCHES%12;
         System.out.println("Feet and inches:\t"+result1+"feet\t"+result2+"inches");
-
-
-
     }
 }

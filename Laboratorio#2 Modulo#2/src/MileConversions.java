@@ -1,9 +1,10 @@
 public class MileConversions {
     public static void main(String[] args) {
-
-        /* Write a program that declares named constants to represent the number of inches, feet, and yards in a mile.
-        Also declare a variable to represent a number of miles and assign a value to it. Compute and display, with
-        explanatory text, the value in inches, feet, and yards. Save the program as MileConversion.java*/
+        // File: MileConversions
+        // Author: Yandel Colón
+        // Date: 2024-10-07
+        // Class: COMP 2120 Programming Logic
+        // Description: A program that converts miles into feet,inches and yards.
 
         //Declaration//
         double MILES= 10;
@@ -11,20 +12,13 @@ public class MileConversions {
         double FEET= 52800;
         double YARD= 17600;
 
+        //Process//
+        double answerFeet= FEET/MILES;
+        double answerInches= YARD/MILES;
+        double answerYards= INCHES/MILES;
 
-                double answerFeet= FEET/MILES;
-                double answerInches= YARD/MILES;
-                double answerYards= INCHES/MILES;
-
-                System.out.println(answerFeet);
-                System.out.println(answerInches);
-                System.out.println(answerYards);
-
-
-
-
-
-
-
+        System.out.println("Feet:\t"+answerFeet);
+        System.out.println("Inches:\t"+answerInches);
+        System.out.println("Yards:\t"+answerYards);
     }
 }
