@@ -1,11 +1,6 @@
 import java.util.Scanner;
-
 public class SwitchSelection {
     public static void main(String[] args) {
-      /*  Write a Java program that uses the switch statement and ask the user to select one of three television models.
-      The program should provide a description of the models. Using the capability of the switch statement,
-      display the model chosen, the description, and the price. The user should make a selection by model number:*/
-
 
         //Declaration//
         String PROMPT1=("Please enter the television model number of youre choice");
@@ -20,15 +15,12 @@ public class SwitchSelection {
             case 1:
                 System.out.println(PROMPT2);
                 break;
-
             case 2:
                 System.out.println(PROMPT3);
                 break;
-
             case 3:
                 System.out.println(PROMPT4);
                 break;
-
             default:
                 System.out.println("Sorry, i didn't quite get that. Please try again.");
         }

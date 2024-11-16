@@ -1,13 +1,12 @@
 import java.util.Scanner;
 public class CeciliaBoutique2 {
     public static void main(String[] args) {
-
-
-     /*4. Cecilia’s Boutique wants several lists of salesperson data. Design a flowchart or
-pseudocode for the following:
-b. A program that accepts the salesperson’s data and displays a message only if
-the salesperson is a high performer—defined a person who sells more than
-200 items worth at least $1,000 in the month.*/
+        // File: CeciliaBoutique2
+        // Author: Yandel Colón
+        // Date: 2024-10-22
+        // Class: COMP 2120 Programming Logic
+        // Description: A program that accept the ID number, number of items sold and total value to define
+        // an objective of the company(sold 200 items worth $1000).
 
         //Declaration//
         String PROMPT1 = ("Input the ID number");

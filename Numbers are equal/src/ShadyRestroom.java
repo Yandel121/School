@@ -1,11 +1,11 @@
 import java.util.Scanner;
 public class ShadyRestroom {
     public static void main(String[]args) {
-   /* Write an application for the Shady Rest Hotel; the program determines the price of a room. Ask the
-    user to choose 1 for a queen bed, 2 for a king, or 3 for a king and a pullout couch. The output
-    echoes the input and displays the price of the room: $125 for queen, $139 for king, and $165 for
-    suite with king bed and a pullout couch. If the user enters an invalid code, display an appropriate
-    message and set the price to 0. Save the file as ShadyRestRoom.java.*/
+        // File: ShadyRestRoom
+        // Author: Yandel Colón
+        // Date: 2024-10-22
+        // Class: COMP 2120 Programming Logic
+        // Description: A program that shows the price of the different rooms and displays their price.
 
         //Declaration//
         String PROMPT = ("Choose the following options for your room:");
