@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
 public class Final {
 
     public static void main(String[] args) {
-//Declaracion de variebles en el programa
+//Declaracion de variables en el programa
 
         int firstNumber;
         int secondNumber;
@@ -22,18 +22,18 @@ public class Final {
             firstNumber = (int)( Math.random () * 10 + 1);
 //segundo proceso
             secondNumber = (int)( Math.random () * 10 + 1);
-//Declarando una variabble
+//Declarando una variable
             result = firstNumber * secondNumber;
 //Implementando un panel estetico al progrma(solo es visual)
             answer=Integer.parseInt(JOptionPane.showInputDialog( null , firstNumber + " x " + secondNumber + " = " ));
-//Decision para repetir el programa
+//El programa analiza la respuesta, si este esta correcto o no
             if(result == answer){
                 JOptionPane.showMessageDialog(null,"Correcto");
             }else{
                 JOptionPane.showMessageDialog(null,"Incorrecto" );
 
             }
-//input del usuario por si desea repetir el programa
+            //Decision para repetir el programa
             response = JOptionPane.showInputDialog("Deseas repetir el programa?(Si o No)");
         }while(response.equalsIgnoreCase("Si"));
         JOptionPane.showMessageDialog(null,"Adios");
