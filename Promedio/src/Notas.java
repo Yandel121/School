@@ -7,7 +7,7 @@ public class Notas {
         String PROMPT2 = ("Cual fue la puntuaci0n adquirida?");
         int numNotas;
         double total = 0;
-        double promedio = 0;
+        double promedio;
 
 
         //Process//
