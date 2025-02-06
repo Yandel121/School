@@ -20,7 +20,7 @@ public class Main {
             System.out.print("Country: ");
             country = sc.nextLine();
         }
-public static void surchargeInfo(){
+public static double surchargeInfo(){
             //Federal Universal Service Charge
     double FUSC= 3.22;
     System.out.println("Surcharge FUSC: " + FUSC);
@@ -36,9 +36,10 @@ public static void surchargeInfo(){
     //Total surcharges and other fees
     double SurchargeTotal= STS + FUSC+RCRC+SAF;
     System.out.println("Total: " +SurchargeTotal);
+    return SurchargeTotal;
 
 }
-public static void  GovernmentFeeInfo(){
+public static double  GovernmentFeeInfo(){
             //9-1-1 Service Fee
             double SERVFEE911=0.95;
             System.out.println("ServFEE911: " + SERVFEE911);
@@ -56,10 +57,42 @@ public static void  GovernmentFeeInfo(){
             System.out.println("STATETAXTELECOM: " + STATETAXTELECOM);
             double TotalGovFee= SERVFEE911+CountySalesTax+StateTax+STATETAXTELECOM+CSTT;
             System.out.println("TotalGovFee: " + TotalGovFee);
+            return TotalGovFee;
 }
 
-public static void PhonePlan(){
+public static double PhonePlan(){
+            String response = "no";
+            double planprice = 0;
+            while(response.equalsIgnoreCase("no")){
+                System.out.print("Enter Phone Plan: (1:Basic plan, 2:Standard plan, 3:Premium plan)  ");
+                int plan= sc.nextInt();
+                switch (plan) {
+                    case 1:
+                         planprice= 30.00;
+                        System.out.println("Basic Plan:500MB data, $30.00/month");
+                        break;
+                    case 2:
+                         planprice= 42.56;
+                        System.out.println("Standard Plan:2GB data, $42.56/month");
+                        break;
+                    case 3:
+                        planprice= 50.99;
+                        System.out.println("Premium Plan:10GB data, $50.99/month");
+                        break;
+                    default:
+                        System.out.println("Unknown Plan: Please select a valid plan.");
+                        System.exit(0);
+                        break;
+                }
+                System.out.println("Is this your chosen phone plan? yes/no");
+                response = sc.next();
+            }
+    return planprice;
 
+}
+public static double TotalBillPrice( double surcharge, double government, double PlanPhone){
+            double billprice = surcharge + government + PlanPhone;
+            return billprice;
 }
         //Metodo principal
         public static void main(String[] args) {
@@ -68,8 +101,10 @@ public static void PhonePlan(){
           System.out.println("State: " + state);
           System.out.println("Zip: " + zip);
           System.out.println("Country: " + country);
-          surchargeInfo();
-          GovernmentFeeInfo();
-          PhonePlan();
+        double surcharge =surchargeInfo();
+         double government= GovernmentFeeInfo();
+          double PlanPhone= PhonePlan();
+          System.out.println("Total"+TotalBillPrice(surcharge, government, PlanPhone));
+
         }
         }
