@@ -1,8 +1,13 @@
 import java.util.Scanner;
 public class Profit {
         public static void main(String[] args) {
-            // Create a Scanner object for user input
+            // File: Profit.java
+            // Author: Yandel Colón Rivera
+            // Date: 2025-2-11
+            // Class: COMP 2315 Structured Programming
+            // Description:Displays a calculation of the payment of the house considering various factors.
             Scanner scanner = new Scanner(System.in);
+
 
             // Prompt the user for the sale price and the various costs
             System.out.print("Enter the sale price of the home: ");
@@ -12,13 +17,16 @@ public class Profit {
             double mortgagePayoff = scanner.nextDouble();
 
             //Realtor's Commision Fee
-            double realtorCommission = 5.32%salePrice;
+            double realtorCommission =salePrice*0.0532;
+            System.out.println("The realtor commission $" + realtorCommission);
 
             //Title Insurance Fee
-            double titleInsuranceFee =0.5%salePrice;
+            double titleInsuranceFee =0.005*salePrice;
+            System.out.println("The title insurance fee is $" + titleInsuranceFee);
 
             //Transfer Tax
-            double transferTax = 0.6%salePrice;
+            double transferTax = 0.006*salePrice;
+            System.out.println("The transfer tax is $" + transferTax);
 
             // Calculate the profit
             double profit = calculateProfit(salePrice, mortgagePayoff, realtorCommission, titleInsuranceFee, transferTax);
@@ -32,7 +40,7 @@ public class Profit {
 
         public static double calculateProfit(double salePrice, double mortgagePayoff, double realtorCommission, double titleInsuranceFee, double transferTax) {
             // Calculate the profit by deducting the costs from the sale price
-            double profit = salePrice - (mortgagePayoff + realtorCommission + titleInsuranceFee + transferTax);
+            double profit = salePrice+ realtorCommission + titleInsuranceFee + transferTax - mortgagePayoff ;
             return profit;
         }
     }
