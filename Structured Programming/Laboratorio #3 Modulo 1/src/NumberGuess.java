@@ -2,6 +2,11 @@ import java.util.Scanner;
 
 public class NumberGuess {
         public static void main(String[] args) {
+            // File: NumberGuess.java
+            // Author: Yandel Colón Rivera & Ariam Rivas Sánchez
+            // Date: 2025-2-18
+            // Class: COMP 2315 Structured Programming
+            // Description:Displays a  calculation of a number which the user must guess.
             Scanner scanner = new Scanner(System.in);
             int lowerBound = 1;
             int upperBound = 100;
