@@ -5,15 +5,9 @@ public class Eggs {
     for individual eggs that are not part of a dozen. Write a program that prompts a user for the number of eggs in the
     order and then display the amount owed with a full explanation. For example, typical output might be,
     you ordered 27 eggs. That’s 2 dozen at $8.50 per dozen and 3 loose eggs at 71 cents each for a total of $19.13
-    Save the program as Eggs.java.*/
+    Save the program as Eggs.java.
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-       /* System.out.println("Welcome to Meadowdale Dairy Farm. How may we help you?");
-        System.out.println("You bought some eggs? How many?");
-        double singleEggPrice = 0.71;
-        int eggs = sc.nextInt();
-        System.out.println("You have " + eggs + " eggs. Correct?");
-        System.out.println("You have " + singleEggPrice*eggs);*/
 
     }
     public static double service_Selection(){
@@ -41,9 +35,11 @@ public class Eggs {
                         double singleDozen = 8.50;
                         System.out.println(singleDozen);
                         System.out.println("How many packages?");
-
-
+                        break;
+                        default:
+                            break;
+                            return service_Selection(); */
 
         }
-    }
-}
+
+
