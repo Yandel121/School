@@ -23,8 +23,6 @@ public class Eggs {
                 } else {
                         double singleEggs = result%looseEggs;
                         System.out.printf("Price:"+singleEggs);
-                        double eggsPerEgg = singleEggs/eggsPerDozen;
-                        System.out.printf("Eggs:"+eggsPerEgg);
                 }
 
 
