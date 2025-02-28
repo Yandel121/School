@@ -6,6 +6,7 @@ public class ChiliToGo {
     // Class: COMP 2315 Structured Programming
     // Description: Un programa que solicita al usuario la cantidad de personas(niños y adultos) que consumiran chili en su menu.
     // Luego, este procedera a recibir su recibo con el precio de su compra.
+
     static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
         System.out.println("Welcome to The Huntington Boys and Girls Club! What would you like to order?");
@@ -16,7 +17,7 @@ public class ChiliToGo {
         double sub = orderDetails[2];
 
         System.out.println("\n==================== RECIBO DE COMPRA ====================");
-        System.out.println("Tienda: Supermercado Selectos");
+        System.out.println("Tienda:Huntington Boys and Girls Club Charity");
         System.out.println("Dirección: Calle Principal #123, Carolina");
         System.out.println("Teléfono: (123) 456-7890");
         System.out.println("---------------------------------------------------------");
