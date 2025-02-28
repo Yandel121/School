@@ -1,5 +1,11 @@
 import java.util.Scanner;
 public class ChiliToGo {
+    // File: ChiliToGo.java
+    // Author: Yandel Colón & Ariam Rivas
+    // Date: 2024-02-7
+    // Class: COMP 2315 Structured Programming
+    // Description: Un programa que solicita al usuario la cantidad de personas(niños y adultos) que consumiran chili en su menu.
+    // Luego, este procedera a recibir su recibo con el precio de su compra.
     static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
         System.out.println("Welcome to The Huntington Boys and Girls Club! What would you like to order?");

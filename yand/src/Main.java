@@ -1,6 +1,6 @@
 import java.util.Scanner;
 public class Main {
-    // File: Main.java
+    // File: Area.java
     // Author: Yandel Colón Rivera
     // Date: 2025-2-7
     // Class: COMP 2315 Structured Programming
