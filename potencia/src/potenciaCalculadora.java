@@ -1,26 +1,31 @@
 import javax.swing.*;
 import java.util.Scanner;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class potenciaCalculadora {
+public class PotenciaCalculadora {
     public static void main(String[] args) {
-      double base, exponente, resultado;
-      String response;
-      Scanner entrada = new Scanner(System.in);
-      do{
-        System.out.println("Entra el numero: ");
-        base = entrada.nextDouble();
-        System.out.println("Entra el exponente: ");
-        exponente = entrada.nextDouble();
-        resultado = Math.pow(base, exponente);
-        System.out.println("Resultado: " + resultado);
-          JOptionPane.showInputDialog(null, resultado );
-//El programa analiza la respuesta, si este esta correcto o no
-        //Decision para repetir el programa
-        response = JOptionPane.showInputDialog("Deseas repetir el programa?(Si o No)");
-      }while(response.equalsIgnoreCase("Si"));
-      JOptionPane.showMessageDialog(null,"Adios");
-      }
+        double base, exponente, resultado;
+        String response;
+        
+        do {
+            base = getInput("Ingrese el número base: ");
+            exponente = getInput("Ingrese el exponente: ");
+            resultado = Math.pow(base, exponente);
+            JOptionPane.showMessageDialog(null, "Resultado: " + resultado);
+
+            // Decision para repetir el programa
+            response = JOptionPane.showInputDialog("¿Deseas repetir el programa? (Sí o No)");
+        } while (response != null && response.equalsIgnoreCase("Sí"));
+        
+        JOptionPane.showMessageDialog(null, "Adiós");
     }
+
+    private static double getInput(String message) {
+        while (true) {
+            try {
+                return Double.parseDouble(JOptionPane.showInputDialog(message));
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(null, "Por favor, ingrese un número válido.");
+            }
+        }
+
 
