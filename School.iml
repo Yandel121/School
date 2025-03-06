@@ -20,6 +20,7 @@
       <sourceFolder url="file://$MODULE_DIR$/Structured Programming/Laboratorio 3 Modulo 2/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/interblackboard/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Painting/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/potencia/src" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
