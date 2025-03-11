@@ -1,9 +1,9 @@
 import java.util.Scanner;
 // File: JobPricing.java
 // Author: Yandel Colon & Ariam Rivas
-//Date: 2025-03-6
+//Date: 2025-03-11
 // Class: COMP 2315 Structured Programming
-// Description: Example, this script processes data for analysis.
+// Description: A program that ask for a report of sorts to determine the cost of the work done
 public class JobPricing {
    static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
