@@ -9,6 +9,8 @@ public class JobPricing {
     public static void main(String[] args) {
         System.out.println("Herbert's Home Repair");
         System.out.println(jobName());
+        System.out.println(calculateJobPrice());
+
 
 
     }
@@ -22,12 +24,10 @@ public class JobPricing {
         double materialCost = sc.nextDouble();
         System.out.println("How many work hours?");
         int workHours = sc.nextInt()*35;
-        System.out.println(workHours);
+        System.out.println("Pay for hours worked:\t"+workHours);
         System.out.println("Travel Time to the job site?");
         double travelTime = sc.nextInt()*12;
-        System.out.println(travelTime);
         double jobCost = materialCost+workHours+travelTime;
-        System.out.println("Job cost is $"+jobCost);
         return jobCost;
     }
 }
