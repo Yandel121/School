@@ -4,6 +4,7 @@ import java.util.Scanner;
 //Date: 2025-03-11
 // Class: COMP 2315 Structured Programming
 // Description: A program that ask for a report of sorts to determine the cost of the work done
+
 public class JobPricing {
    static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
