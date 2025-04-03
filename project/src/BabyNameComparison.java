@@ -1,14 +1,11 @@
-import java.util.Random;
 import java.util.Scanner;
-
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+// File: BabyNameComparison.java
+// Author: Yandel Colon & Ariam Rivas
+//Date: 2025-03-20
+// Class: COMP 2315 Structured Programming
+// Description: A program that creates a variation of two-name combinations based on the input of the user.
 public class BabyNameComparison {
     public static void main(String[] args) {
-        /*Write an application that prompts the user for three first names and concatenates them in every possible
-        two-name combination so that new parents can easily compare them to find the most pleasing baby name.
-        Save the file as BabyNameComparison.java.*/
-
         Scanner sc = new Scanner(System.in);
             System.out.println("Enter the name of your first name");
             String name = sc.nextLine();
