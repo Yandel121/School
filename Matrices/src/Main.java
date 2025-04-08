@@ -1,33 +1,67 @@
-import java.util.Scanner;
+//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-
     public static void main(String[] args) {
-        double matriz[][] = Matriz();
-        printMatrix(matriz);
+        sumElementMatrix();
 
 
     }
-    public static double[][] Matriz(){
-        Scanner sc = new Scanner(System.in);
 
-        System.out.println("Entra la cantidad de filas en la matriz: ");
-        int filas = sc.nextInt();
-        System.out.println("Entra la cantidad de columnas en la matriz: ");
-        int columnas = sc.nextInt();
-        double[][] matrix = new double [filas][columnas];
-        for (int f = 0; f < matrix.length; f++) {
-            for (int c = 0; c < matrix[f].length; c++) {
-                matrix[f][c] = sc.nextInt();
+    public static void sumElementMatrix() {
+        double[][] matrices = {{0, 1, 2}, {2, 3, 4}, {5, 6, 7}};
+        int rows = matrices.length;
+        int cols = matrices[0].length;
+        double sum = 0;
+        for (int r = 0; r < rows; r++) {
+            for (int c = 0; c < cols; c++) {
+                sum += matrices[r][c];
+
+
             }
         }
-        return matrix;
+        System.out.println(sum + " ");
+        double matrix= printMatrix2(matrices, matrices);
     }
-    public static void printMatrix(double[][] matrix) {
-        for (int f = 0; f < matrix.length; f++) {
-            for (int c = 0; c < matrix[f].length; c++) {
-                System.out.print(matrix[f][c] + " ");
+
+    public static void printMatrix1() {
+        int[][] matrices2 = {{0, 1, 2}, {2, 3, 4}, {5, 6, 7}};
+        int rows = matrices2.length;
+        int cols = matrices2[0].length;
+        double sum = 0;
+        for (int r = 0; r < rows; r++) {
+            for (int c = 0; c < cols; c++) {
+                sum += matrices2[r][c];
+                System.out.print(matrices2[r][c] + " ");
+            }
+        }
+
+    }
+
+    public static double printMatrix2(double[][] matrices, double[][] matrices2) {
+        double[][] matrix=new double[matrices.length][matrices.length];
+
+        /*double sum = 0;
+        for (int r = 0; r < matrices.length-1; r++) {
+            for (int c = 0; c < matrices.length-1; c++) {
+                sum += matrix[r][c];
+            }
+        }*/
+        for (int r = 0; r < matrices.length; r++) {
+            for (int c = 0; c < matrices.length; c++) {
+                matrix[r][c]= matrices[r][c] + matrices2[r][c];
+
+            }
+        }
+        for (int r = 0; r < matrices.length; r++) {
+            for (int c = 0; c < matrices.length; c++) {
+                System.out.print(matrix[r][c] + " ");
             }
             System.out.println();
         }
+
+
+        System.out.println();
+        return 0.9;
     }
 }
+
