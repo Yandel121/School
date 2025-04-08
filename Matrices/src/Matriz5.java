@@ -28,18 +28,10 @@
             }
         }
 
-        public void imprimirUltimaFila() {
-            System.out.println("Ultima fila");
-            for(int c=0;c<mat[mat.length-1].length;c++) {
-                System.out.print(mat[mat.length-1][c]+" ");
-            }
-        }
-
         public static void main(String[] ar) {
             Matriz5 ma=new Matriz5();
             ma.cargar();
             ma.imprimir();
-            ma.imprimirUltimaFila();
         }
     }
 
