@@ -39,17 +39,9 @@ public class Main {
 
     public static double printMatrix2(double[][] matrices, double[][] matrices2) {
         double[][] matrix=new double[matrices.length][matrices.length];
-
-        /*double sum = 0;
-        for (int r = 0; r < matrices.length-1; r++) {
-            for (int c = 0; c < matrices.length-1; c++) {
-                sum += matrix[r][c];
-            }
-        }*/
         for (int r = 0; r < matrices.length; r++) {
             for (int c = 0; c < matrices.length; c++) {
                 matrix[r][c]= matrices[r][c] + matrices2[r][c];
-
             }
         }
         for (int r = 0; r < matrices.length; r++) {
