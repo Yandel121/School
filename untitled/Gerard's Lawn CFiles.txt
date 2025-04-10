@@ -1,0 +1,2 @@
+[Cust.Num, LastName, Address, property area]
+[1000, Santana, Santa Isidra, Fajardo,PR, 00738,]
