@@ -1,58 +1,89 @@
 import java.io.*;
 import java.util.Arrays;
-
 public class BusinessUnion {
+
     public static void main(String[] args) {
         /*2. Geraldine’s Landscaping Service and Gerard’s Lawn Maintenance are merging their businesses and want to
         merge their customer files. Each file contains a customer number, last name, address, and property area in square feet, and each
 two files into one file containing all customers. Assume there are no identical customer numbers*/
         GeraldineFile();
         GerardFile();
+        String geraldineFile = "Geraldine's Landscaping CFiles.txt";
+        String gerardFile = "Gerard's Lawn CFiles.txt";
+        String outputFile = "MergedBusinessUnion.txt";
+
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(outputFile))) {
+            // Read and write from Geraldine's file
+            try (BufferedReader reader1 = new BufferedReader(new FileReader(geraldineFile))) {
+                String line;
+                while ((line = reader1.readLine()) != null) {
+                    writer.write(line);
+                    writer.newLine();
+                }
+            }
+
+            // Read and write from Gerard's file
+            try (BufferedReader reader2 = new BufferedReader(new FileReader(gerardFile))) {
+                String line;
+                while ((line = reader2.readLine()) != null) {
+                    writer.write(line);
+                    writer.newLine();
+                }
+            }
+
+            System.out.println("Files merged successfully into " + outputFile);
+        } catch (IOException e) {
+            System.out.println("An error occurred during file merging.");
+            e.printStackTrace();
+        }
+        System.out.println("Merged file created at: " + new File("MergedBusinessUnion.txt").getAbsolutePath());
+
     }
+
     public static void GeraldineFile() {
-        String [] Attributes1={"Cust.Num","LastName","Address", "property area"};
-        String [] CustInfo1 = {"1012", "Figueroa", "Santa Isidra","Fajardo,PR", "00738,"};
-        try{
+        String[] Attributes1 = {"Cust.Num", "LastName", "Address", "property area"};
+        String[] CustInfo1 = {"1012", "Figueroa", "Santa Isidra", "Fajardo,PR", "00738,"};
+        try {
             File myObj = new File("Geraldine's Landscaping CFiles.txt");
-            if(myObj.createNewFile()) {
+            if (myObj.createNewFile()) {
                 System.out.println("File Created: " + myObj.getName());
-            }else {
+            } else {
                 System.out.println("File Already Exists");
             }
         } catch (IOException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
         }
-        try (BufferedWriter bw= new BufferedWriter(new FileWriter
-                ("Geraldine's Landscaping CFiles.txt"))){
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter
+                ("Geraldine's Landscaping CFiles.txt"))) {
             bw.write(Arrays.toString(Attributes1));
             bw.newLine();
             bw.write(Arrays.toString(CustInfo1));
-        } catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public static void GerardFile(){
-        String [] Attributes2={"Cust.Num","LastName","Address", "property area"};
-        String [] CustInfo2 = {"1000", "Santana", "Santa Isidra","Fajardo,PR", "00738,"};
-        try{
+    public static void GerardFile() {
+        String[] Attributes2 = {"Cust.Num", "LastName", "Address", "property area"};
+        String[] CustInfo2 = {"1000", "Santana", "Santa Isidra", "Fajardo,PR", "00738,"};
+        try {
             File myObj = new File("Gerard's Lawn CFiles.txt");
-            if(myObj.createNewFile()) {
+            if (myObj.createNewFile()) {
                 System.out.println("File Created: " + myObj.getName());
-            }else {
+            } else {
                 System.out.println("File Already Exists");
             }
         } catch (IOException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
         }
-        try (BufferedWriter bw= new BufferedWriter(new FileWriter
-                ("Gerard's Lawn CFiles.txt"))){
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter
+                ("Gerard's Lawn CFiles.txt"))) {
             bw.write(Arrays.toString(Attributes2));
             bw.newLine();
             bw.write(Arrays.toString(CustInfo2));
-        } catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
