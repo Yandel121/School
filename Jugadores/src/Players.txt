@@ -1,0 +1,5 @@
+Jugador:Pam,	Puntaje:34
+Jugador:Juana,	Puntaje:23
+Jugador:Zany,	Puntaje:67
+Jugador:Pammy,	Puntaje:34
+Jugador:Noe,	Puntaje:88
