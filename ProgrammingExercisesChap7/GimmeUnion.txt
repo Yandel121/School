@@ -1,0 +1,5 @@
+1003, Young, 28 Oceanside, 5/1/2017, 20000
+1004, Quincy, 34 Leeward, 7/5/2017, 15000
+1005, Huang, 190 Jib, 8/2/2017, 16000
+1009, Kennedy, 210 Portside, 6/15/2018, 10000
+1004, Quincy, 34 Leeward, 4/12/2004, 100001007, Jerome, 19 Spinnaker, 5/18/2004, 125001009, Kennedy, 210 Portside, 6/15/2008, 150001020, Harrison, 34 Keel, 8/1/2012, 35001021, Gardner, 333 Waterway, 5/3/2015, 14000
