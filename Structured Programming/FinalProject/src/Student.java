@@ -47,18 +47,18 @@ public class Student implements Comparable<Student> {
     public static Student[] registerStudents(int numStudents) {
         Scanner input = new Scanner(System.in);
         Student[] students = new Student[numStudents];
-
+        String [] materias = {"Español","Ingles","Math"};
+        String respuesta="No";
         for (int i = 0; i < numStudents; i++) {
             System.out.print("Ingrese el ID del estudiante: ");
             int id = input.nextInt();
-            input.nextLine(); // Limpiar buffer
             System.out.print("Ingrese el nombre del estudiante: ");
             String name = input.nextLine();
             String matricula = input.nextLine();
 
             int[] grades = new int[3];
             for (int j = 0; j < 3; j++) {
-                System.out.print("Ingrese la calificación " + (j + 1) + ": ");
+                System.out.print("Ingrese la calificación de: " + materias[j]+ ": ");
                 grades[j] = input.nextInt();
             }
 
