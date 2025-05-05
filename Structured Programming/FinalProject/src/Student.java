@@ -48,13 +48,13 @@ public class Student implements Comparable<Student> {
         Scanner input = new Scanner(System.in);
         Student[] students = new Student[numStudents];
         String [] materias = {"Español","Ingles","Math"};
-        String respuesta="No";
         for (int i = 0; i < numStudents; i++) {
             System.out.print("Ingrese el ID del estudiante: ");
             int id = input.nextInt();
             System.out.print("Ingrese el nombre del estudiante: ");
-            String name = input.nextLine();
-            String matricula = input.nextLine();
+            String name = input.next();
+            System.out.print("Ingrese el matricula del estudiante: ");
+            String matricula = input.next();
 
             int[] grades = new int[3];
             for (int j = 0; j < 3; j++) {
@@ -105,7 +105,8 @@ public class Student implements Comparable<Student> {
     }
  public static void main(String[] args){
         Scanner input=new Scanner(System.in);
-        Student[] students=registerStudents(10);
+        Student[] students=registerStudents(1);
+
 
         Arrays.sort(students);
 
