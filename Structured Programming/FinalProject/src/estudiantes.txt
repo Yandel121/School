@@ -1,0 +1,20 @@
+REGISTRO DE ESTUDIANTES
+
+ID: 1
+Nombre: Bambam
+Matrícula: CS
+Español: 34
+Inglés: 45
+Matemáticas: 56
+Promedio: 45.00
+Estado: Reprobado
+----------------------
+ID: 2
+Nombre: Josefina
+Matrícula: CS
+Español: 45
+Inglés: 67
+Matemáticas: 66
+Promedio: 59.33
+Estado: Reprobado
+----------------------

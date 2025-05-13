@@ -1,15 +1,9 @@
+import java.io.*;
 import java.util.*;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
-
-/**
- * Represents a student with an ID, name, matricula, and grades for different subjects.
- * Provides functionality to compute the student's average grade, determine pass/fail
- * status, and compare students based on their averages.
- */
 public class Student1 implements Comparable<Student1> {
-
     private final int id;
     private final String name;
     private final String matricula;
@@ -76,97 +70,164 @@ public class Student1 implements Comparable<Student1> {
         return students;
     }
 
- public static void main(String[] args) {
-    Scanner input = new Scanner(System.in);
-    Student1[] students = registerStudents(2);
-    Arrays.sort(students, Comparator.comparingInt(Student1::getId));
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        Student1[] students = registerStudents(2);
+        Arrays.sort(students, Comparator.comparingInt(Student1::getId));
 
-    JFrame frame = new JFrame("Menu Principal");
-    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    frame.setSize(400, 400);
-    
-    JMenuBar menuBar = new JMenuBar();
-    JMenu menu = new JMenu("Opciones");
-    
-    // Create menu items
-    JMenuItem mostrarItem = new JMenuItem("1. Tabla de estudiantes");
-    JMenuItem estadisticasItem = new JMenuItem("2. Estadísticas");
-    JMenuItem salirItem = new JMenuItem("3. Salir");
-    
-    // Modify action listeners to show GUI windows
-    mostrarItem.addActionListener(e -> {
-        // Create a new window for the student table
-        JFrame tableFrame = new JFrame("Tabla de Estudiantes");
-        tableFrame.setSize(600, 400);
+        JFrame frame = new JFrame("Menu Principal");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(400, 400);
         
-        // Create table model with columns
-        String[] columnNames = {"ID", "Nombre", "Matrícula", "Español", "Inglés", "Matemáticas", "Promedio", "Estado"};
-        DefaultTableModel model = new DefaultTableModel(columnNames, 0);
+        JMenuBar menuBar = new JMenuBar();
+        JMenu menu = new JMenu("Opciones");
         
-        // Add student data to table
-        for (Student1 s : students) {
-            model.addRow(new Object[]{
-                s.getId(),
-                s.getName(),
-                s.getMatricula(),
-                s.getGrade()[0],
-                s.getGrade()[1],
-                s.getGrade()[2],
-                String.format("%.2f", s.calculateAverage()),
-                s.getStatus()
-            });
-        }
+        // Crear elementos del menú
+        JMenuItem buscarItem = new JMenuItem("1. Buscar Estudiante");
+        JMenuItem mostrarItem = new JMenuItem("2. Tabla de estudiantes");
+        JMenuItem estadisticasItem = new JMenuItem("3. Estadísticas");
+        JMenuItem guardarItem = new JMenuItem("4. Guardar en Archivo");
+        JMenuItem salirItem = new JMenuItem("5. Salir");
         
-        // Create and configure the table
-        JTable table = new JTable(model);
-        JScrollPane scrollPane = new JScrollPane(table);
-        tableFrame.add(scrollPane);
-        
-        tableFrame.setVisible(true);
-    });
-    
-    estadisticasItem.addActionListener(e -> {
-        // Create statistics window
-        JFrame statsFrame = new JFrame("Estadísticas");
-        statsFrame.setSize(300, 200);
-        
-        // Calculate statistics
-        int passed = 0, failed = 0;
-        double totalAverage = 0;
-        for (Student1 s : students) {
-            totalAverage += s.calculateAverage();
-            if (s.getStatus().equals("Aprobado")) {
-                passed++;
-            } else {
-                failed++;
+        // Acción para buscar estudiante
+        buscarItem.addActionListener(e -> {
+            String idStr = JOptionPane.showInputDialog(frame, "Ingrese el ID del estudiante:");
+            try {
+                int searchId = Integer.parseInt(idStr);
+                boolean found = false;
+                for (Student1 s : students) {
+                    if (s.getId() == searchId) {
+                        found = true;
+                        String mensaje = String.format("""
+                            Información del Estudiante:
+                            ID: %d
+                            Nombre: %s
+                            Matrícula: %s
+                            Español: %d
+                            Inglés: %d
+                            Matemáticas: %d
+                            Promedio: %.2f
+                            Estado: %s
+                            """, 
+                            s.getId(), s.getName(), s.getMatricula(),
+                            s.getGrade()[0], s.getGrade()[1], s.getGrade()[2],
+                            s.calculateAverage(), s.getStatus());
+                        JOptionPane.showMessageDialog(frame, mensaje);
+                        break;
+                    }
+                }
+                if (!found) {
+                    JOptionPane.showMessageDialog(frame, "Estudiante no encontrado.");
+                }
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(frame, "Por favor ingrese un número válido.");
             }
-        }
-        double groupAverage = totalAverage / students.length;
+        });
         
-        // Create panel with statistics
-        JPanel statsPanel = new JPanel();
-        statsPanel.setLayout(new BoxLayout(statsPanel, BoxLayout.Y_AXIS));
-        statsPanel.add(new JLabel("Total aprobados: " + passed));
-        statsPanel.add(new JLabel("Total reprobados: " + failed));
-        statsPanel.add(new JLabel(String.format("Promedio general: %.2f", groupAverage)));
+        // Acción para guardar en archivo
+        guardarItem.addActionListener(e -> {
+            try {
+                FileWriter writer = new FileWriter("estudiantes.txt");
+                writer.write("REGISTRO DE ESTUDIANTES\n\n");
+                for (Student1 s : students) {
+                    writer.write(String.format("""
+                        ID: %d
+                        Nombre: %s
+                        Matrícula: %s
+                        Español: %d
+                        Inglés: %d
+                        Matemáticas: %d
+                        Promedio: %.2f
+                        Estado: %s
+                        ----------------------
+                        """,
+                        s.getId(), s.getName(), s.getMatricula(),
+                        s.getGrade()[0], s.getGrade()[1], s.getGrade()[2],
+                        s.calculateAverage(), s.getStatus()));
+                }
+                writer.close();
+                JOptionPane.showMessageDialog(frame, "Datos guardados en estudiantes.txt");
+            } catch (IOException ex) {
+                JOptionPane.showMessageDialog(frame, "Error al guardar el archivo: " + ex.getMessage());
+            }
+        });
         
-        statsFrame.add(statsPanel);
-        statsFrame.setVisible(true);
-    });
-    
-    salirItem.addActionListener(e -> System.exit(0));
-    
-    // Add menu items to menu
-    menu.add(mostrarItem);
-    menu.addSeparator();
-    menu.add(estadisticasItem);
-    menu.addSeparator();
-    menu.add(salirItem);
-    
-    // Add menu to menu bar
-    menuBar.add(menu);
-    
-    frame.setJMenuBar(menuBar);
-    frame.setVisible(true);
-}
+        // Modify action listeners to show GUI windows
+        mostrarItem.addActionListener(e -> {
+            // Create a new window for the student table
+            JFrame tableFrame = new JFrame("Tabla de Estudiantes");
+            tableFrame.setSize(600, 400);
+            
+            // Create table model with columns
+            String[] columnNames = {"ID", "Nombre", "Matrícula", "Español", "Inglés", "Matemáticas", "Promedio", "Estado"};
+            DefaultTableModel model = new DefaultTableModel(columnNames, 0);
+            
+            // Add student data to table
+            for (Student1 s : students) {
+                model.addRow(new Object[]{
+                    s.getId(),
+                    s.getName(),
+                    s.getMatricula(),
+                    s.getGrade()[0],
+                    s.getGrade()[1],
+                    s.getGrade()[2],
+                    String.format("%.2f", s.calculateAverage()),
+                    s.getStatus()
+                });
+            }
+            
+            // Create and configure the table
+            JTable table = new JTable(model);
+            JScrollPane scrollPane = new JScrollPane(table);
+            tableFrame.add(scrollPane);
+            
+            tableFrame.setVisible(true);
+        });
+        
+        estadisticasItem.addActionListener(e -> {
+            // Create statistics window
+            JFrame statsFrame = new JFrame("Estadísticas");
+            statsFrame.setSize(300, 200);
+            
+            // Calculate statistics
+            int passed = 0, failed = 0;
+            double totalAverage = 0;
+            for (Student1 s : students) {
+                totalAverage += s.calculateAverage();
+                if (s.getStatus().equals("Aprobado")) {
+                    passed++;
+                } else {
+                    failed++;
+                }
+            }
+            double groupAverage = totalAverage / students.length;
+            
+            // Create panel with statistics
+            JPanel statsPanel = new JPanel();
+            statsPanel.setLayout(new BoxLayout(statsPanel, BoxLayout.Y_AXIS));
+            statsPanel.add(new JLabel("Total aprobados: " + passed));
+            statsPanel.add(new JLabel("Total reprobados: " + failed));
+            statsPanel.add(new JLabel(String.format("Promedio general: %.2f", groupAverage)));
+            
+            statsFrame.add(statsPanel);
+            statsFrame.setVisible(true);
+        });
+        
+        salirItem.addActionListener(e -> System.exit(0));
+        
+        // Agregar elementos al menú
+        menu.add(buscarItem);
+        menu.addSeparator();
+        menu.add(mostrarItem);
+        menu.addSeparator();
+        menu.add(estadisticasItem);
+        menu.addSeparator();
+        menu.add(guardarItem);
+        menu.addSeparator();
+        menu.add(salirItem);
+        
+        menuBar.add(menu);
+        frame.setJMenuBar(menuBar);
+        frame.setVisible(true);
+    }
 }
