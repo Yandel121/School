@@ -1,4 +1,10 @@
 public class NumbersYay {
+
+    // File: NumbersYay.java
+    // Author: Yandel Colon Rivera
+    // Date: 2025-09-03
+    // Class: COMP 2400 OOP
+    // Description: Create  several overloading methods with atleast 4 calculations.
     public static void main(String[] args) {
         int number1=1, number2=2, number3=3;
         double result1 = operation( number1, number2,number3);
