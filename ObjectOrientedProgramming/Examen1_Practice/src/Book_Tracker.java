@@ -1,5 +1,11 @@
 import java.util.ArrayList;
 import java.util.Scanner;
+
+// File: Book_Tracker.java
+// Author: Yandel Colon Rivera
+// Date: 2025-16-9
+// Class: COMP 2400 OOP
+// Description: Keeps track of the number of books created and outputs a book's information.
 public class Book_Tracker {
     private String book_name;
     private String author;
@@ -12,7 +18,7 @@ public class Book_Tracker {
     }
 
     public void printBooks() {
-        System.out.println(book_name+" " + author);
+        System.out.println("Title:"+book_name+" , Author:" + author);
     }
 
     public static void main (String[] args) {
@@ -36,6 +42,6 @@ public class Book_Tracker {
 
     }
     public static void count(){
-        System.out.println (Book_Tracker.count);
+        System.out.println ("Books in our library:"+Book_Tracker.count);
     }
 }
