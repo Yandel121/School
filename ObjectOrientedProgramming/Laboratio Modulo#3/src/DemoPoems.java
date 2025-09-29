@@ -1,4 +1,9 @@
 import java.util.Scanner;
+// File: DemoPoems.java
+// Author: Yandel Colon Rivera
+// Date: 2025-29-9
+// Class: COMP 2400 OOP
+// Description:  Showcases a menu of different types of poems.
 
 public class DemoPoems extends Poem {
 

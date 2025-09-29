@@ -1,4 +1,10 @@
 import java.util.Scanner;
+// File: DemoTees.java
+// Author: Yandel Colon Rivera
+// Date: 2025-29-9
+// Class: COMP 2400 OOP
+// Description: Showcases a receipt of the size and color of the chosen T-Shirt. If custom-made, its chosen slogan.
+
 public class DemoTees {
     protected static int max=999;
     protected static int min=1;
