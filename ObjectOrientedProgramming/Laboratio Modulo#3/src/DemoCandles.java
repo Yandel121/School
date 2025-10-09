@@ -8,8 +8,6 @@ import java.util.Scanner;
 public class DemoCandles extends Candle {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
-        //Asks the user for the candle they want
         Candle candle1 = new Candle();
         System.out.println("What height would you like?");
         candle1.setHeight(sc.nextInt());
@@ -20,10 +18,8 @@ public class DemoCandles extends Candle {
         //Outputs the given information with its price
         candle1.printCandle();
 
-        //Seperates statements
-        System.out.println();
+      
 
-        //Ask the user for the scented candle they want
         ScentedCandle sc1 = new ScentedCandle();
         System.out.println("What height would you like in inches?");
         sc1.setHeight(sc.nextInt());

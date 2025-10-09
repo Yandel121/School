@@ -1,3 +1,8 @@
+//File: DemoMel.java
+//Author: Yandel Colón Rivera
+//Date: 10/10/2025
+//Class: COMP 2400 OOP
+//Description: Displays the food items details, components and calories
 public class DemoMeal extends Meal {
     public static void main(String[] args) {
         Meal meal = new Meal();

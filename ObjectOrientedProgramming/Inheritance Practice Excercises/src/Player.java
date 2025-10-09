@@ -1,3 +1,4 @@
+
 public class Player {
     protected int playerNumber;
     protected String name;
@@ -17,6 +18,11 @@ public class Player {
     }
     public void setName(String name) {
         this.name = name;
+    }
+
+    public void displayPlayerDetails(){
+        System.out.println("Player Number: "+this.getPlayerNumber());
+        System.out.println("Name: "+this.getName());
     }
 
 }
