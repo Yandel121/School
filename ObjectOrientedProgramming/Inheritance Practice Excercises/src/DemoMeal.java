@@ -11,5 +11,11 @@ public class DemoMeal extends Meal {
         meal.setComponents();
         meal.displayMealDetails();
 
+        Meal dinner = new Meal();
+        dinner.setMealDetails("Dinner");
+        dinner.setCalories(2500);
+        dinner.setComponents();
+        dinner.displayMealDetails();
+
     }
 }
