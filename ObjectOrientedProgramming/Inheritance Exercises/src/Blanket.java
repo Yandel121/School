@@ -34,8 +34,6 @@ public class Blanket {
 
         }
 
-
-
     public String getColor(){return color;}
     public void setColor(String color){ this.color=color;}
     public String getMaterial(){return material;}
