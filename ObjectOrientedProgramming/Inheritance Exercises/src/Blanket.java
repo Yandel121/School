@@ -3,20 +3,47 @@ public class Blanket {
     protected String color;
     protected String material;
     protected double price;
-    protected  double basePrice;
+    private final double BASEPRICE=30.00;
     public Blanket(){
         this.size="Twin";
         this.color="White";
         this.material="Cotton";
-        this.price=30.00;
+        this.price=BASEPRICE;
     }
     public String getSize(){
         return size;}
 
 
     public void setSize(String size){
-        this.size=size;
+        if(size.equals("Twin")|| size.equals("Double")|| size.equals("Queen")|| size.equals("King")){
+            this.size=size;
+        }else {
+            // If size invalid, reset to default values
+            this.size="Twin";
+            this.color="White";
+            this.material="Cotton";
+        }
+        setPrice(price);
 
+
+        }
+
+    public String getColor(){return color;}
+    public void setColor(String color){ this.color=color;}
+    public String getMaterial(){return material;}
+    public void setMaterial(String material){
+     if (material.equals("Cotton")|| material.equals("Wool")|| material.equals("Cashmere")){
+         this.material=material;
+     } else {
+         this.size="Twin";
+         this.color="White";
+         this.material="Cotton";
+     }
+        setPrice(price);
+    }
+    public double getPrice(){return price;}
+    public void setPrice(double price){
+        this.price=BASEPRICE;
         switch(size) {
             case "Double":
                 this.price += 10.00;
@@ -28,39 +55,28 @@ public class Blanket {
                 this.price+= 40.00;
                 break;
             default:
-                System.out.println("Try again");
+
                 break;
         }
 
+        switch(this.material) {
+            case "Wool":
+                this.price += 20.00;
+                break;
+            case "Cashmere":
+                this.price += 45.00;
+                break;
+            default:
+                break;
         }
 
-    public String getColor(){return color;}
-    public void setColor(String color){ this.color=color;}
-    public String getMaterial(){return material;}
-    public void setMaterial(String material){
-        if (material.equals("Cotton")) {
-            this.material="Cotton";
-            this.price+= 20.00;
-        }
-
-        if (material.equals("Cashmere")){
-            this.material="Cashmere";
-            this.price+= 45.00;
-        }
-    }
-    public double getPrice(){return price;}
-    public void setPrice(double price){this.price=price;
-        setSize(size);
-        setMaterial(material);
 
 
     }
-
-    public void printBlanket(){
-        System.out.println("Size:"+getSize());
-        System.out.println("Color: "+getColor());
-        System.out.println("Material: "+ getMaterial());
-        System.out.println("Price: "+getPrice());
+    public String toString(){
+        return "Size: "+this.getSize()+
+                "\nColor: "+this.getColor()+
+                "\nMaterial: "+this.getMaterial()+
+                "\nPrice: "+ this.getPrice();
     }
-
 }

@@ -6,29 +6,34 @@ public class Electric_Blanket extends Blanket {
         this.automaticShutoff= "NO";
     }
     public void setHeatSettings(int heatSettings) {
-        this.heatSettings = heatSettings;
-    }
-    public void setAutomaticShutoff(String automaticShutoff) {
-        if(automaticShutoff.equals("YES")) {
-            this.automaticShutoff = "Yes";
-            this.price += 5.75;
-        }
-    }
-    public int getHeatSettings() {
+
         if (heatSettings<1 || heatSettings>5){
             this.heatSettings=1;
 
         }
-        return this.heatSettings;
+    }
+    public void setAutomaticShutoff(String automaticShutoff) {
+
+        if(automaticShutoff.equalsIgnoreCase("Yes"))
+        {
+            if (!this.automaticShutoff.equalsIgnoreCase("Yes")) {
+                this.price += 5.75;
+            }
+            this.automaticShutoff="Yes";
+        }else{
+            this.automaticShutoff="No";
+        }
+    }
+    public int getHeatSettings() {
+        return heatSettings;
     }
     public String getAutomaticShutoff() {
         return automaticShutoff;
     }
 
-    @Override public void printBlanket(){
-        super.printBlanket();
-        System.out.println("Heat: " + this.getHeatSettings());
-        System.out.println("Automatic Shutoff: " + this.getAutomaticShutoff());
+    @Override public String toString(){
+        return super.toString()+ "\n"+"Heat Settings: "+ this.getHeatSettings()+
+                "\n"+"Automatic Shutoff"+getAutomaticShutoff();
     }
 
 }

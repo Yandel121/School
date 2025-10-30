@@ -7,29 +7,80 @@ import java.util.Scanner;
 public class DemoBlanket {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        String input;
+        System.out.println("------Default Blanket--------");
         Blanket blanket = new Blanket();
-        blanket.printBlanket();
+        System.out.println(blanket);
         System.out.println("---------------------");
 
         Blanket blanket2 = new Blanket();
-        System.out.print("In which size do you want the blanket? ");
-        System.out.println("1. Double");
-        System.out.println("2. Queen");
-        System.out.println("3. King");
-        System.out.println("4. Twin");
-        blanket2.setSize(sc.next());
-        System.out.print("What material? ");
-        System.out.println("1. Cotton");
-        System.out.println("2. Cashmere");
-        blanket2.setMaterial(sc.next());
-        System.out.print("In which color? ");
-        blanket2.setColor(sc.next());
-        blanket2.printBlanket();
-        System.out.println("-----------------");
+        System.out.println("------Custom Blanket--------");
+        System.out.println("Enter QUIT for material to finish");
 
-        Electric_Blanket electric_blanket = new Electric_Blanket();
-        electric_blanket.setHeatSettings(sc.nextInt());
-        electric_blanket.setAutomaticShutoff(sc.next());
-        electric_blanket.printBlanket();
+        do {
+            System.out.print("Current details");
+            System.out.println(blanket2);
+            System.out.print("--------------------");
+
+            //Prompt for material
+            System.out.print("Enter Material (Cotton/Wool/Cashmere) or QUIT):");
+            input = sc.next();
+            if (input.equalsIgnoreCase("QUIT")) {
+                break;
+            } else {
+                blanket2.setMaterial(input);
+            }
+
+            System.out.print("Enter size (Twin/Double/Queen/King):");
+            blanket2.setSize(sc.next());
+
+            //Prompt for color
+            System.out.print("Enter Color: ");
+            blanket2.setColor(sc.next());
+
+        } while (true);
+        System.out.println("-----------------");
+        System.out.println(blanket2);
+
+        Electric_Blanket electricBlanket = new Electric_Blanket();
+        System.out.println("------Custom Electric Blanket--------");
+        System.out.println("Enter QUIT for material to finish");
+
+        do {
+            System.out.print("Current details");
+            System.out.println(electricBlanket);
+            System.out.print("--------------------");
+
+            //Prompt for material
+            System.out.print("Enter Material (Cotton/Wool/Cashmere) or QUIT):");
+            input = sc.next();
+            if (input.equalsIgnoreCase("QUIT")) {
+                break;
+            } else {
+                electricBlanket.setMaterial(input);
+            }
+
+            System.out.print("Enter size (Twin/Double/Queen/King):");
+            electricBlanket.setSize(sc.next());
+
+            //Prompt for color
+            System.out.print("Enter Color: ");
+            electricBlanket.setColor(sc.next());
+
+            System.out.print("Enter Heat Settings (1-5)");
+            if (sc.hasNextInt()){
+                electricBlanket.setHeatSettings(sc.nextInt());
+            }else{
+                System.out.println("Invalid input");
+                sc.next();
+            }
+
+            System.out.println("Automatic Shutoff (Yes/No");
+            electricBlanket.setAutomaticShutoff(sc.next());
+
+        } while (true);
+        System.out.println("--------Final Electric Blanket---------");
+        System.out.println(electricBlanket);
+
     }
 }
