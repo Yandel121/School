@@ -1,3 +1,8 @@
+//File: JBookQuote.java
+//Author: Yandel Colón Rivera
+//Date: 11/12/2025
+//Class: COMP 2400 OOP
+//Description: Displays a JFrame with the opening sentence(s) from my favorite book.
 import javax.swing.*;
 import java.awt.*;
 public class JBookQuote {

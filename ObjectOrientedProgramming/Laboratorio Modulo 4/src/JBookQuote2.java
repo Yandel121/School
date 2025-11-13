@@ -1,7 +1,11 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-
+//File: JBookQuote2.java
+//Author: Yandel Colón Rivera
+//Date: 11/12/2025
+//Class: COMP 2400 OOP
+//Description: Extends JBookQuote by adding a button that, when clicked, shows the book title.
 public class JBookQuote2 {
 
     private JFrame mainFrame;
