@@ -19,7 +19,7 @@ public class TowerOfHanoi {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the number of moves: ");
+        System.out.println("Enter the number of disks: ");
         int n = sc.nextInt();
         towerOfHanoi(n, 'A', 'B', 'C');
     }
