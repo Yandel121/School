@@ -31,19 +31,15 @@ public class Factorial {
         }
     }
 
-    public int factorial () {
-        int  total = 1;
-        for (int i = 1; i <=number; i++) {
-
-            total*=i;
-        }
-        return total;
+    public long factorial (int number) {
+        if(number<=1) return 1;
+        return number*factorial(number-1);
     }
 
     public static void main (String[] args) {
         Factorial main = new Factorial();
         main.setNumber();
-        System.out.println(main.factorial());
+        System.out.println(main.factorial(main.number));
     }
 
 }
