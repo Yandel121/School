@@ -1,3 +1,8 @@
+//File: ListofGrocery.java
+//Author: Yandel Colón Rivera
+//Date: 2/11/2026
+//Class: COMP 2900 Data Struture
+//Description: program that outputs  the grocery list articles witht their price and its total price.
 import java.util.Scanner;
 
 import java.util.ArrayList;
@@ -7,7 +12,6 @@ import java.util.Scanner;
 public class ListofGrocery {
     String name;
     String price;
-
 
     public void GroceryList() {
         List<String> names = new ArrayList<>();
@@ -34,9 +38,6 @@ public class ListofGrocery {
         }
         System.out.println("Total price: "+counter);
     }
-
-
-
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);

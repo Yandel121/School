@@ -1,18 +1,21 @@
+//File: StackOverflow.java
+//Author: Yandel Colón Rivera
+//Date: 2/11/2026
+//Class: COMP 2900 Data Structure
+//Description: Application that demonstrates the capacities of a stack.
+
 import java.util.Scanner;
 import java.util.Stack;
-public class StackOverflow {
 
+public class StackOverflow {
     public static void main (String [] args ) {
-        Stack<Integer> stack;
-        Stack<Integer> stack2;
-        stack = new Stack<>();
-        stack2 = new Stack<>();
+        Stack<Integer> stack; Stack<Integer> stack2;
+        stack = new Stack<>(); stack2 = new Stack<>();
 
         stack.push(1);
         stack.push(2);
         stack.push(3);
         stack.push(4);
-
 
         //Stack uses a LIFO Order.
         //The stack.pop removes the last element added.
@@ -35,9 +38,6 @@ public class StackOverflow {
         }
             System.out.println("Data has been found:"+stack2.peek());
         }
-
-
-
 
     }
 
